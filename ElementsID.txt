@@ -1,0 +1,84 @@
+System.out.println(System.currentTimeMillis());
+
+
+driver1.findElement(By.id("element")).sendKeys(Keys.ENTER);
+    
+
+Shift+Enter:
+String newLine = Keys.chord(Keys.SHIFT, Keys.ENTER);
+driver.findElement(By.cssSelector("[resourceid='TextBox']")).sendKeys(newLine);
+
+
+http://www.w3schools.com/xpath/xpath_syntax.asp
+
+$x("xpath")
+
+@FindBy(xpath = "//li[@id='sign-in']/a/span[text()='Sign in']")
+private WebElement signIn;
+
+(xpath = "//li[child::a[@id='c_himld' and contains(@style, 'block')]]")
+
+@FindBy(xpath = "//div[@id='icTmMeControlMedium0_bar' and contains(@class, 'c_ic_blueframe')]")
+    private WebElement offlineIcon;
+
+driver.findElements(By.xpath("//li/a[@sutra='contacttile' and child::div[@class='Chiclet Online']]"));
+
+//div[@sutra='chatviewmessagetext']/span[text()='" + message + "']
+
+//li/a/div[@class='Name' and parent::*/div[@class='Chiclet Online']]
+
+//div[@class='Chiclet Online']/following-sibling::div[@class='Name']
+
+//div[@sutra='chatviewmessagetext']/span[text()='123']
+
+
+
+
+
+
+http://www.w3schools.com/cssref/css_selectors.asp
+$$("css")
+
+@FindBy (css = "#c_himla")
+    private WebElement availableMenu;
+
+@FindBy(css = "[name=passwd]")
+    private WebElement passInput;
+
+@FindBy(css = "#c_himld[style*='block']")
+    private WebElement invisibleMenu;
+
+ @FindBy(css = "[sutra='flyoutoptionskype']")
+    private WebElement skypeFilter;
+
+
+----------------------------------------------------------------
+selectors (CSS, XPATH) розм≥щенн€ елемента на стор≥нц≥
+прост≥: id, name, link складн≥ Css, xpash
+
+Css  $$("css")  * - All,  
+< div id=Фadd_buttonФ class=ФvshФ text=Ф#252Ф
+
+css = "div#add_button" ; *#add_button ; #add_button ;   (через значенн€ атрибута)
+div.vsh (т≥льки дл€ класу) 
+element[atribute] = div[text] ; 
+div[text=#252 ]; строга р≥вн≥сть
+ div[text^=#2 ]; починаЇтьс€ з символ≥в
+ div[text$=52 ]; зак≥нчуЇтьс€ на символи
+div[text*=5 ];  м≥стить символи
+ #add_button div  елемент Ї потомком (м≥ж ними Ї елементи)
+#add_button+div   елемент зразу за елементом
+
+Xpash  $x("xpath")  починаЇтьс€ з рута / (//) (можна ≥ти знизу вверх)
+. Ц поточний елемент //html/body/. Ц body
+. . -  бат≥ьк≥вський елемент //html/body/.. Ц html
+@attr Ц зверненн€ до атрибута  //elevent[@attr=value] 
+//div[@id=ТheaderТ] 
+//div[3] Ц 3й елемент
+//li[@id='sign-in']/a/span[text()='Sign in']
+ and contains(@style, 'block')  
+//li/a[@sutra='contacttile' and child::div[@class='Chiclet Online']]
+//li/a/div[@class='Name' and parent::*/div[@class='Chiclet Online']]
+//div[@class='Chiclet Online']/following-sibling::div[@class='Name']
+descendant::book	 Selects all book descendants of the current node нажадок
+ancestor::book	 Selects all book ancestors of the current node предок
